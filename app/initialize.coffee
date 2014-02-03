@@ -6,7 +6,8 @@ require 'config/router'
 # way so everything is in the App.* namespace.
 folderOrder = [
   'initializers', 'utils', 'mixins', 'adapters', 'serializers', 'routes',
-  'models', 'views', 'controllers', 'helpers', 'templates', 'components'
+  'models', 'views', 'controllers', 'helpers', 'templates', 'components',
+  'libs'
 ]
 
 folderOrder.forEach (folder) ->

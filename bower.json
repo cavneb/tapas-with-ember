@@ -1,0 +1,19 @@
+{
+  "name": "tapas-with-ember",
+  "version": "0.0.0",
+  "homepage": "https://github.com/cavneb/tapas-with-ember",
+  "authors": [
+    "Eric Berry <cavneb@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ic-ajax": "https://raw.github.com/instructure/ic-ajax/master/main.js"
+  }
+}

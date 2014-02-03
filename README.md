@@ -16,10 +16,11 @@ installation scripts, environment-specific JS builds, generators, and
 * [Brunch][]
 * [Ember][]
 * [CoffeeScript][]
-* [Stylus][]
+* [Less][]
 * [Handlebars](http://handlebarsjs.com)
 * [HTML5 Boilerplate](http://html5boilerplate.com)
 * [Normalize.css](http://necolas.github.io/normalize.css/)
+* [CannedJS](https://github.com/sideshowcoder/canned)
 * _Optional_ [Ember Data][]
 * _Optional_ [Ember Model][]
 
@@ -58,7 +59,7 @@ Now that you've got Brunch installed, you're three commands away from a running
 Ember app!
 
 ```bash
-brunch new gh:mutewinter/tapas-with-ember <appname>
+brunch new gh:cavneb/tapas-with-ember <appname>
 cd <appname>
 cake server
 ```
@@ -144,6 +145,7 @@ scaffolt route <name>             →    app/routes/<name>.coffee
 scaffolt router                   →    app/config/router.coffee
 scaffolt template <name>          →    app/<name>.hbs
 scaffolt view <name>              →    app/views/<name>.coffee
+scaffolt lib <name>               →    app/libs/<name>.coffee
 ```
 
 ## Compiling for Production
@@ -243,17 +245,15 @@ It updates and **overwites** `Cakefile`, `package.json`, `portkey.json`,
 `config.coffee`, `generators/*`.
 
 ## Thanks To
-
+* [@mutewinter](https://github.com/mutewinter/tapas-with-ember) for making vital changes to the original
+  skeleton. YAEB is based on this skeleton.
 * [@gcollazo](https://github.com/gcollazo) for making
   [brunch-with-ember-reloaded][], which Tapas with Ember is based on.
-* [@cavneb](https://github.com/cavneb) for his excellent contributions via his
-  fork, [yet-another-ember-brunch][].
 
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mutewinter/tapas-with-ember/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/cavneb/yet-another-ember-brunch/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 [brunch-with-ember-reloaded]: https://github.com/gcollazo/brunch-with-ember-reloaded
-[Stylus]: http://learnboost.github.io/stylus/
+[Less]: http://lesscss.org/
 [CoffeeScript]: http://coffeescript.org/
 [auto-reload-brunch]: https://github.com/brunch/auto-reload-brunch
 [Brunch]: http://brunch.io
@@ -268,5 +268,4 @@ It updates and **overwites** `Cakefile`, `package.json`, `portkey.json`,
 [the FAQ]: https://github.com/mutewinter/tapas-with-ember/wiki/FAQ
 [deployment script]: /config/deploy.rb
 [Mina]: http://nadarei.co/mina/
-[yet-another-ember-brunch]: https://github.com/cavneb/yet-another-ember-brunch
 [digest-brunch]: https://github.com/mutewinter/digest-brunch

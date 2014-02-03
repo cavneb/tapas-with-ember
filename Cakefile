@@ -2,6 +2,7 @@ http = require 'http'
 https = require 'https'
 fs = require 'fs'
 path = require 'path'
+canned = require 'canned'
 {spawn, exec} = require 'child_process'
 semver = require 'semver'
 AdmZip = require('adm-zip')
@@ -28,6 +29,11 @@ spawnBrunch = (flags, env) ->
   brunch.stdout.on 'data', (data) -> console.log data.toString().trim()
   brunch.stderr.on 'data', (data) -> console.log data.toString().trim()
 
+cannedServer = (path, port) ->
+  opts = { cors: true, logger: process.stdout }
+  can = canned(path, opts)
+  http.createServer(can).listen(port)
+  console.log 'Canned listening on port ' + port
 
 task 'server', 'start the brunch server in development', (options) ->
   flags = ['w', '-s']
@@ -39,6 +45,7 @@ task 'server', 'start the brunch server in development', (options) ->
     flags.push '-p'
     flags.push options.port
 
+  cannedServer('cans', 3000)
   spawnBrunch flags, process.env
 
 task 'build', 'build for production (delete public folder first)', ->
@@ -57,7 +64,7 @@ task 'test', 'run brunch in the test environment', ->
 updateMessage = 'update Tapas to latest (Cakefile, package.json, portkey.json,
  config.coffee, generators/*)'
 task 'tapas:update', updateMessage, (options) ->
-  url = 'https://codeload.github.com/mutewinter/tapas-with-ember/zip/master'
+  url = 'https://codeload.github.com/cavneb/tapas-with-ember/zip/master'
   filesToUpdate = [
     'Cakefile'
     'package.json'

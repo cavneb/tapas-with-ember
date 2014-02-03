@@ -1,0 +1,11 @@
+{
+  "name": "lib",
+  "description": "An Ember Object",
+  "files": [
+    {
+      "from": "object.coffee.hbs",
+      "to": "app/libs/{{name}}.coffee"
+    }
+  ],
+  "dependencies": []
+}

@@ -6,22 +6,23 @@ console.log "Running Brunch in #{environment} environment"
 
 exports.config =
   paths:
-    watched: ['app', 'test', 'vendor', 'config']
+    watched: ['app', 'test', 'vendor', 'config', 'bower_components']
   files:
     javascripts:
       joinTo:
         'scripts/app.js':
           new RegExp("^(app|config/environments/#{environment}\.coffee)")
         'scripts/vendor.js':
-          new RegExp("^vendor/(scripts|ember/#{environment})")
+          new RegExp("^(bower_components|vendor/(scripts|ember/#{environment}))")
       order:
         before: [
           'vendor/scripts/console-polyfill.js'
           'vendor/scripts/jquery.js'
           'vendor/scripts/handlebars.js'
           "vendor/ember/#{environment}/ember.js"
-          "vendor/ember/#{environment}/ember-data.js"
-          "vendor/ember/#{environment}/ember-model.js"
+          'bower_components/ic-ajax/index.js'
+          #"vendor/ember/#{environment}/ember-data.js"
+          #"vendor/ember/#{environment}/ember-model.js"
           # Anything else that depends on Ember
         ]
 
